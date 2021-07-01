@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TeslaNav from './teslaNav'
+import TeslaNav from './TeslaNav'
 import styled, { keyframes } from 'styled-components'
 import { motion } from 'framer-motion'
 import { SectionImg, LastSectionFooter } from '../HomeData'
