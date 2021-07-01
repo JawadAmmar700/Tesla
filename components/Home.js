@@ -135,6 +135,10 @@ const NameOrder = styled.p`
       border-bottom: 2px solid black;
     }
   }
+  @media (max-width: 512px) {
+    width: 300px;
+    margin-left: 50px;
+  }
 `
 const spin = keyframes`
     from{
@@ -182,6 +186,31 @@ const ButtonContainer = styled(motion.div)`
     top: 85px;
     left: -278px;
     animation: ${spin} 1s infinite ease-in;
+  }
+  @media (max-width: 1044px) {
+    display: flex;
+  }
+  @media (max-width: 674px) {
+    .btn1 {
+      width: 200px;
+    }
+    .btn2 {
+      width: 200px;
+    }
+    svg {
+      left: -230px;
+    }
+  }
+  @media (max-width: 512px) {
+    .btn1 {
+      width: 150px;
+    }
+    .btn2 {
+      width: 150px;
+    }
+    svg {
+      left: -175px;
+    }
   }
 `
 
