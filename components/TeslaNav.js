@@ -1,31 +1,31 @@
-import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
-import { motion } from 'framer-motion'
-import { useRouter } from 'next/router'
-import Link from 'next/link'
+import React, { useState } from "react"
+import styled, { keyframes } from "styled-components"
+import { motion } from "framer-motion"
+import { useRouter } from "next/router"
+import Link from "next/link"
 
 const category = [
-  'Model S',
-  'Model 3',
-  'Model X',
-  'Model Y',
-  'Solar Roof',
-  'Solar Panels',
+  "Model S",
+  "Model 3",
+  "Model X",
+  "Model Y",
+  "Solar Roof",
+  "Solar Panels",
 ]
 const MenuCategory = [
-  'Existing Invantory',
-  'Used Inventory',
-  'Trade-In',
-  'CyberTruck',
-  'Roadster',
-  'Semi',
-  'Charging',
-  'PowerWall',
-  'Commercial Energy',
-  'Utilities',
-  'Test Drive',
-  'Find Us',
-  'Support',
+  "Existing Invantory",
+  "Used Inventory",
+  "Trade-In",
+  "CyberTruck",
+  "Roadster",
+  "Semi",
+  "Charging",
+  "PowerWall",
+  "Commercial Energy",
+  "Utilities",
+  "Test Drive",
+  "Find Us",
+  "Support",
 ]
 
 const TeslaNav = () => {
@@ -35,7 +35,9 @@ const TeslaNav = () => {
   return (
     <NavContainer>
       <Link href="/">
-        <NavLogo></NavLogo>
+        <NavLogo>
+          <img src="/tesla.png" style={{ width: "45px" }} alt="" />
+        </NavLogo>
       </Link>
       <TeslaCategory>
         {category?.map((item, id) => (
@@ -62,20 +64,20 @@ const TeslaNav = () => {
       </TeslaNavigaton>
       {menuOpen && (
         <motion.div
-          initial={{ x: 0, width: 0, height: '100vh' }}
+          initial={{ x: 0, width: 0, height: "100vh" }}
           animate={{
             x: 0,
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             right: 0,
-            backgroundColor: 'white',
+            backgroundColor: "white",
             width: 300,
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            overflowY: 'scroll',
-            justifyContent: 'center',
-            alignItems: 'center',
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            overflowY: "scroll",
+            justifyContent: "center",
+            alignItems: "center",
             zIndex: 5,
           }}
         >
@@ -122,17 +124,16 @@ const NavContainer = styled.div`
   top: 0px;
   z-index: 10;
 `
-const NavLogo = styled.img`
+const NavLogo = styled.div`
   box-sizing: border-box;
-  width: 100px;
-  height: 40px;
-  background-image: url('https://p1.hiclipart.com/preview/164/304/900/car-logo-tesla-inc-typography-text-letter-disruptive-innovation-png-clipart.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
   position: relative;
   left: 30px;
   outline: none;
+  border: none;
+  margin-top: 5px;
 `
 const TeslaCategory = styled.div`
   display: flex;

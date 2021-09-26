@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { SectionImg, LastSectionFooter } from '../HomeData'
-import styled from 'styled-components'
-import TeslaNav from '../components/TeslaNav'
-import SliderModel from '../components/Slider'
-import ExtraFeatures from '../components/ExtraFeatures'
-import { motion } from 'framer-motion'
+import React, { useEffect, useState } from "react"
+import { SectionImg, LastSectionFooter } from "../HomeData"
+import styled from "styled-components"
+import TeslaNav from "../components/TeslaNav"
+import SliderModel from "../components/Slider"
+import ExtraFeatures from "../components/ExtraFeatures"
+import { motion } from "framer-motion"
 
 export const getStaticPaths = () => {
-  const paths = SectionImg.map(item => {
+  const paths = SectionImg.slice(0, SectionImg.length - 2).map(item => {
     return { params: { Model: item.Name } }
   })
   return { paths, fallback: false }
@@ -36,10 +36,10 @@ const Model = ({ data }) => {
       setView(false)
     }
 
-    window.addEventListener('scroll', setY)
+    window.addEventListener("scroll", setY)
 
     return () => {
-      window.removeEventListener('scroll', setY)
+      window.removeEventListener("scroll", setY)
     }
   }, [])
 
@@ -71,7 +71,7 @@ const Model = ({ data }) => {
         <motion.p
           style={{ x: -90 }}
           variants={variants}
-          animate={view ? 'visible' : 'hidden'}
+          animate={view ? "visible" : "hidden"}
         >
           All-New Interior
         </motion.p>
@@ -83,7 +83,7 @@ const Model = ({ data }) => {
       <ExtraFeatures ExtraFeatures={data.ExtraFeatures} view={view} />
       <SecondImageModel>
         <img
-          src="https://tesla-cdn.thron.com/delivery/public/thumbnail/tesla/d4a3d44d-a5b6-47b1-87db-707cbe0dade1/bvlatuR/std/1370x770/ModelS_03?lcid=2b084dd2-ade1-49ec-a470-45363112146c&v=18"
+          src="https://tesla-view.thron.com/api/xcontents/resources/delivery/getThumbnail/tesla/490x502/e13c1370-afcb-4d88-92bb-313b033709c4.jpg?v=19&dpr=300"
           alt=""
         />
         <SecondMile>
